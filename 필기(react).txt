@@ -19,11 +19,25 @@
 2. 종료시 터미널에서 ctrl + c입력
 
 최초 개발환경 구축 후에 public폴더에는 html이 src폴더에는 css, js등의 파일이 들어간다.
-js파일 class안에서 가장 바깥은 태그 하나로 이루어져있어야 한다.
 
 
 
 리액트로 코딩하기
+컴포넌트와 props
+class (컴포넌트명) extends Component {      // (컴포넌트명)은 꼭 대문자로 시작해야 한다.
+    render() {      // class객체 안의 함수는 function을 굳이 쓰지 않고 생략할 수 있다.
+        return (
+            <html태그>        // 이 부분에서 html코드로 작성하기에 리액트 문법을 바닐라js로 가져가면 완성되지 않은 코드로 오류가 난다.
+                <html태그>
+                    {this.props.props명}
+                    // props는 html의 속성과 비슷하게 사용할 수 있으며,
+                    // 이렇게 설정한 props는 <컴포넌트명 props명="내용"></컴포넌트명>의 방식으로 다른 컴포넌트에서 사용할 수 있다.
+                </html태그>
+            </html태그>       // 컴포넌트 hTML코드의 최상단은 꼭 한개의 태그만 존재할 수 있다.
+        );      // 꼭 새미콜론(;)으로 닫아준다.
+    }
+}
+
 import React, { Component } from "react";
 -react 라이브러리에 있는 Component를 사용할 수 있게 해주는 코드
 
